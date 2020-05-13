@@ -14,8 +14,7 @@ module.exports = async({ authorsToCreate = 5, booksToCreate = 10 } = {}) => {
 
   await Books.create([...Array(booksToCreate)].map(() => ({
     authorId: chance.pickone(authors)._id,
-    name: chance.pickone(names),
-    authorName: chance.sentence()
+    title: chance.sentence()
 
   })));
 };
